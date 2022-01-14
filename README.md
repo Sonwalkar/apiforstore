@@ -46,3 +46,66 @@ It computes the net amount, taxes final amount, total tax amount, Total amount, 
 7. run `python manage.py runserver`
 
 8. open browser then go to `http://127.0.0.1:8000/` if not work in normal mode try in incognito mode.
+
+# Api Documentation
+
+### Request
+
+`https://apiforstore.herokuapp.com/`
+
+```
+headers
+Accept:
+"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+
+"Content-Type": "application/json;",
+    
+"X-CSRFToken": `csrf token Value`,
+```
+```
+Http Method
+POST
+```
+
+```
+[
+    {
+       "item": string,
+       "itemCategory": string,
+       "quantity": number,
+       "price": number
+   },
+   {
+       "item": string,
+       "itemCategory": string,
+       "quantity": number,
+       "price": number
+   }
+]
+```
+### Response
+
+```
+[
+    [
+        {
+            finalPrice: number,
+            item: string,
+            itemCategory: string,
+            netAmount: number,
+            price: number,
+            quantity: number,
+            taxAmount: number,
+            taxRate: number
+        }
+    ],
+    [
+        dateOfPurchase: string,
+        discountAmount: number,
+        totalAmount: number,
+        totalAmountPayable: number,
+        totalTaxAmount: number
+    ]
+]
+```
+
