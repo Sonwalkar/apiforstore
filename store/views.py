@@ -19,6 +19,7 @@ def index(request):
 
         totalPrice = 0
         totalDiscountedPrice = 0
+        totalTaxAmount = 0
 
         # loop on each items
         for d in data:
@@ -47,6 +48,8 @@ def index(request):
                     # Calculate Tax amount of an item up to 2 floating point
                     itemInfo['taxAmount'] = round(((5*d['price'])/100)*int(d['quantity']), 2)
 
+                    totalTaxAmount += itemInfo['taxAmount']
+
                 # if item price is greater then or equal to 1000 INR
                 else:
 
@@ -62,6 +65,8 @@ def index(request):
                     # to calculate Total price of all items
                     itemInfo['taxAmount'] = round(((12*d['price'])/100)*int(d['quantity']), 2)
 
+                    totalTaxAmount += itemInfo['taxAmount']
+
             # If item category is Food or medicine
             elif d['itemCategory'].lower() == 'food' or d['itemCategory'].lower() == 'medicine':
               
@@ -76,6 +81,8 @@ def index(request):
 
                 # to calculate Total price of all items
                 itemInfo['taxAmount'] = round(((5*d['price'])/100)*int(d['quantity']), 2)
+                
+                totalTaxAmount += itemInfo['taxAmount']
 
             # If item category is music
             elif d['itemCategory'].lower() == 'music':
@@ -92,6 +99,8 @@ def index(request):
                 # to calculate Total price of all items
                 itemInfo['taxAmount'] = round(((3*d['price'])/100)*int(d['quantity']), 2)
 
+                totalTaxAmount += itemInfo['taxAmount']
+
             # If item category is imported
             elif d['itemCategory'].lower() == 'imported':
 
@@ -106,6 +115,8 @@ def index(request):
 
                 # to calculate Total price of all items
                 itemInfo['taxAmount'] = round(((18*d['price'])/100)*int(d['quantity']), 2)
+
+                totalTaxAmount += itemInfo['taxAmount']
 
             # If item category is Book or any other category added accedentelly it won't be calculated
             else:
@@ -122,6 +133,7 @@ def index(request):
                 # to calculate Total price of all items
                 itemInfo['taxAmount'] = 0
 
+                totalTaxAmount += itemInfo['taxAmount']
             
             # add each item to response data
             responseData[0].append(itemInfo)
@@ -138,7 +150,7 @@ def index(request):
             discountAmount = round(((5*totalPrice)/100), 2)
         
         # date, total amount, discount amount and total payable amount add
-        otherDetails = {'totalAmount': round(totalPrice,2), 'discountAmount': discountAmount, 'dateOfPurchase': datetime.datetime.now(timezone("Asia/Kolkata")).strftime("%d %B %Y %I:%M%p"), 'totalAmountPayable': round(totalDiscountedPrice, 2)}
+        otherDetails = {'totalAmount': round(totalPrice,2), 'discountAmount': discountAmount, 'dateOfPurchase': datetime.datetime.now(timezone("Asia/Kolkata")).strftime("%d %B %Y %I:%M%p"), 'totalAmountPayable': round(totalDiscountedPrice, 2), 'totalTaxAmount':totalTaxAmount}
         
         # add total amp
         responseData[1].append(otherDetails)

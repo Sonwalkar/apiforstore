@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Discount Amount 5%";
     }
 
+    document.querySelector('.totalTaxAmount').innerHTML= `<strong>Total Tax Amount</strong> ${data[1][0].totalTaxAmount}`
     // Show Total amount
     document.querySelector(
       ".totalAmountTd"
