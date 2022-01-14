@@ -1,0 +1,43 @@
+body {
+  background-color: #ececec;
+}
+
+.itemsListsInput {
+  padding: 10px;
+  position: inherit;
+}
+
+.itemsListsInput .card {
+  position: inherit;
+  margin: 10px auto;
+}
+
+.itemsListsInput .card-body {
+  padding: 15px 5%;
+}
+
+.itemsListsInput #loginApi {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.itemsListsInput .table {
+  display: none;
+}
+
+.itemsListsInput #error-msg {
+  color: brown;
+}
+
+.receiptDiv {
+  padding: 10px;
+  position: inherit;
+  display: none;
+}
+
+.receiptDiv .dateAndTime {
+  display: inline;
+}
