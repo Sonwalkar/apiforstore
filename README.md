@@ -25,9 +25,11 @@ It computes the net amount, taxes final amount, total tax amount, Total amount, 
 
 3. First clone this [GitHub](https://github.com/Sonwalkar/apiforstore.git) repository locally
 
-4. Install all the required packages listed in "requirement.txt" file by executing command `pip install -r requirements.txt` 
+4. cd `apiforstore`
 
-5. Go to apiForStore/settings.py file change the value of "DEBUG=False" to "DEBUG=True" and Comment out below value.
+5. Install all the required packages listed in "requirements.txt" file by executing command `pip install -r requirements.txt` 
+
+6. Go to apiForStore/settings.py file change the value of "DEBUG=False" to "DEBUG=True" and Comment out below value.
 
     > SECURE_HSTS_SECONDS = 1000
 
@@ -40,3 +42,7 @@ It computes the net amount, taxes final amount, total tax amount, Total amount, 
     > SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
     
     > SECURE_HSTS_PRELOAD = True
+
+7. run `python manage.py runserver`
+
+8. open browser then go to `http://127.0.0.1:8000/` if not work in normal mode try in incognito mode.
