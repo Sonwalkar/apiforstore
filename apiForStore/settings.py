@@ -30,17 +30,17 @@ SECRET_KEY = 'django-insecure-h*-025u8icoxcn*l96wpa3@b$%j9ui@__d25&n@g7lep@1=#)8
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # if this project running on localhost than debug should be true "True"
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['apiforstore.herokuapp.com']
 
 # if this project running on localhost than comment out below lines 
-SECURE_HSTS_SECONDS = 1000 # comment this line
-SECURE_SSL_REDIRECT = True # comment this line
-CSRF_COOKIE_SECURE = True # comment this line
-SESSION_COOKIE_SECURE = True # comment this line
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True # comment this line
-SECURE_HSTS_PRELOAD = True # comment this line
+# SECURE_HSTS_SECONDS = 1000 # comment this line
+# SECURE_SSL_REDIRECT = True # comment this line
+# CSRF_COOKIE_SECURE = True # comment this line
+# SESSION_COOKIE_SECURE = True # comment this line
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True # comment this line
+# SECURE_HSTS_PRELOAD = True # comment this line
 # till here
 
 
