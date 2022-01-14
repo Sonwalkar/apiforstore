@@ -137,7 +137,7 @@ def index(request):
             discountAmount = round(((5*totalPrice)/100), 2)
         
         # date, total amount, discount amount and total payable amount add
-        otherDetails = {'totalAmount': round(totalPrice,2), 'discountAmount': discountAmount, 'dateOfPurchase': datetime.datetime.now().strftime("%d %B %Y %I:%M%p"), 'totalAmountPayable': round(totalDiscountedPrice, 2)}
+        otherDetails = {'totalAmount': round(totalPrice,2), 'discountAmount': discountAmount, 'dateOfPurchase': datetime.datetime.now().timezone("Asia/Kolkata").strftime("%d %B %Y %I:%M%p"), 'totalAmountPayable': round(totalDiscountedPrice, 2)}
         
         # add total amp
         responseData[1].append(otherDetails)
