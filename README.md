@@ -1,4 +1,4 @@
-# Api For store
+# API For store
 
 ### Description
 
@@ -47,7 +47,15 @@ It computes the net amount, taxes final amount, total tax amount, Total amount, 
 
 8. open browser then go to `http://127.0.0.1:8000/` if not work in normal mode try in incognito mode.
 
-# Api Documentation
+
+```
+Note
+I use the date and time at the time of request to get
+and data can be stored in the database and retrieved but as not mentioned in the task document I not did
+
+```
+
+# API Documentation
 
 ### Request
 
