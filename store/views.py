@@ -142,7 +142,7 @@ def index(request):
         # add total amp
         responseData[1].append(otherDetails)
 
-        # sort data in ascending order
+        # sort data in ascending order of item name
         responseData[0] = sorted(responseData[0], key=lambda k: k['item'])
 
         return JsonResponse(responseData, safe=False)
