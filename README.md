@@ -19,7 +19,7 @@ It computes the net amount, taxes final amount, total tax amount, Total amount, 
 
 ### Step by step Process to run locally
 
-1. Make sure python installed on loacl machine
+1. Make sure python installed on local machine
 
 2. Also make sure django is also installed on local machine
 
