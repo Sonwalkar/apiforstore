@@ -143,7 +143,7 @@ def index(request):
         responseData[1].append(otherDetails)
 
         # sort data in ascending order
-        responseData[0] = sorted(responseData[0], key=lambda k: k['itemCategory'])
+        responseData[0] = sorted(responseData[0], key=lambda k: k['item'])
 
         return JsonResponse(responseData, safe=False)
 
